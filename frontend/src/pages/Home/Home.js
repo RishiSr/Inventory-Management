@@ -1,42 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiProductHuntLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import "./Home.scss";
 import heroImg from "../../assets/inv-img.png";
 import { ShowOnLogin, ShowOnLogout } from "../../components/protect/HiddenLink";
+import { BsArrowUpCircle } from "react-icons/bs";
 
 const Home = () => {
+  const [open, setOpen] = useState(false)
   return (
-    <div className="home">
-      <nav className="container --flex-between ">
-        <div className="logo">
-          <RiProductHuntLine size={35} />
-        </div>
+    <div className=" home ">
 
-        <ul className="home-links">
-          <ShowOnLogout>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-          </ShowOnLogout>
-          <ShowOnLogout>
-            <li>
-              <button className="--btn --btn-primary">
-                <Link to="/login">Login</Link>
-              </button>
-            </li>
-          </ShowOnLogout>
-          <ShowOnLogin>
-            <li>
-              <button className="--btn --btn-primary">
-                <Link to="/dashboard">Dashboard</Link>
-              </button>
-            </li>
-          </ShowOnLogin>
-        </ul>
-      </nav>
       {/* HERO SECTION */}
-      <section className="container hero">
+      {/* <section className="container hero">
         <div className="hero-text">
           <h2>Inventory {"&"} Stock Management Solution</h2>
           <p>
@@ -59,6 +35,67 @@ const Home = () => {
           <img src={heroImg} alt="Inventory" />
         </div>
       </section>
+       */}
+      <div className={`  home1   ${open ? " bounce " : " normal "}  `} onClick={() => setOpen(!open)}  >
+        <p className="para" >
+          Inventory Management
+        </p>
+        <p className="para " style={{
+          fontSize: "4rem"
+        }} >
+          MERN Stack Project
+        </p>
+        <div className=" scroll-button" >
+          <BsArrowUpCircle className={`button-arrow  ${open && "rotate-180"} `} />
+          <p className="scroll-up-text"  >
+            Click to scroll {open ? "down" : "up"}
+
+
+          </p>
+          <BsArrowUpCircle className={`button-arrow ${open && "rotate-180"} `} />
+        </div>
+
+      </div>
+      <div style={{
+        marginBottom: "18rem"
+      }}  >
+        {/* <div className="logo">
+          <RiProductHuntLine size={35} />
+        </div> */}
+
+        <ul className="--flex-center  " style={{
+          gap: '2rem'
+        }}>
+          <ShowOnLogout>
+            <li className="--btn --btn-primary  --center-all" style={{
+              width: "20rem"
+
+            }} >
+              <Link className=" --color-white" to="/register"><h4 className=" --color-white">Register
+              </h4></Link>
+            </li>
+          </ShowOnLogout>
+          <ShowOnLogout>
+            <li className="--btn --btn-primary --center-all " style={{
+              width: "20rem"
+            }}>
+              <Link className="" to="/login"><h4 className=" --color-white" >
+                Login
+              </h4></Link>
+
+            </li>
+          </ShowOnLogout>
+          <ShowOnLogin>
+            <li>
+              <button className="--btn --btn-primary">
+                <Link to="/dashboard"><h4 className=" --color-white" >
+                  Dashboard
+                </h4></Link>
+              </button>
+            </li>
+          </ShowOnLogin>
+        </ul>
+      </div>
     </div>
   );
 };

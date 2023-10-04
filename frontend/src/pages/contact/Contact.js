@@ -55,7 +55,7 @@ const Contact = () => {
           </Card>
         </form>
 
-        <div className="details">
+        {/* <div className="details">
           <Card cardClass={"card2"}>
             <h3>Our Contact Information</h3>
             <p>Fill the form or contact us via other channels listed below</p>
@@ -79,7 +79,7 @@ const Contact = () => {
               </span>
             </div>
           </Card>
-        </div>
+        </div> */}
       </div>
     </div>
   );

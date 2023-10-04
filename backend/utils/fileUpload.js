@@ -26,7 +26,18 @@ function fileFilter(req, file, cb) {
   }
 }
 
-const upload = multer({ storage, fileFilter });
+// const upload = multer({ storage, fileFilter });
+const upload = multer({
+  storage: multer.diskStorage({
+    filename: function (req, file, cb) {
+      cb(
+        null,
+        new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
+      ); // 23/08/2022
+    }
+  }),
+  limits: { fileSize: 500000 }
+});
 
 // File Size Formatter
 const fileSizeFormatter = (bytes, decimal) => {
