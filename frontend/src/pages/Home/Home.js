@@ -67,19 +67,19 @@ const Home = () => {
           gap: '2rem'
         }}>
           <ShowOnLogout>
-            <li className="--btn --btn-primary  --center-all" style={{
+            <li className="" style={{
               width: "20rem"
 
             }} >
-              <Link className=" --color-white" to="/register"><h4 className=" --color-white">Register
+              <Link className=" --color-white --btn --btn-primary  --center-all" to="/register"><h4 className=" --color-white">Register
               </h4></Link>
             </li>
           </ShowOnLogout>
           <ShowOnLogout>
-            <li className="--btn --btn-primary --center-all " style={{
+            <li className=" " style={{
               width: "20rem"
             }}>
-              <Link className="" to="/login"><h4 className=" --color-white" >
+              <Link className="--btn --btn-primary --center-all" to="/login"><h4 className=" --color-white" >
                 Login
               </h4></Link>
 
@@ -87,11 +87,11 @@ const Home = () => {
           </ShowOnLogout>
           <ShowOnLogin>
             <li>
-              <button className="--btn --btn-primary">
-                <Link to="/dashboard"><h4 className=" --color-white" >
-                  Dashboard
-                </h4></Link>
-              </button>
+
+              <Link className="--btn --btn-primary --center-all" to="/dashboard"><h4 className=" --color-white" >
+                Dashboard
+              </h4></Link>
+
             </li>
           </ShowOnLogin>
         </ul>
