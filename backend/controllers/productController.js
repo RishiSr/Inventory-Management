@@ -7,9 +7,8 @@ const cloudinary = require("../utils/cloudinary.js")
 // Create Prouct
 const createProduct = asyncHandler(async (req, res) => {
   const { name, sku, category, quantity, price, description } = req.body;
-
   //   Validation
-  console.log("Rishi")
+
   if (!name || !category || !quantity || !price || !description) {
     res.status(400);
     throw new Error("Please fill in all fields");
@@ -39,6 +38,7 @@ const createProduct = asyncHandler(async (req, res) => {
   }
 
   // Create Product
+  console.log(req.user);
   const product = await Product.create({
     user: req.user.id,
     name,
